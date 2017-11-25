@@ -1,0 +1,69 @@
+<link rel="import" href="../../bower_components/polymer/polymer-element.html">
+<link rel="import" href="../../bower_components/iron-flex-layout/iron-flex-layout-classes.html">
+<link rel="import" href="../../bower_components/paper-material/paper-material.html">
+
+<dom-module id="calendar-day">
+  <template>
+  <style include="iron-flex iron-flex-alignment iron-positioning">
+
+    .cubical {
+        padding: 5px;
+        margin: 20px;
+        font-size: 40px;
+        color: #fafbfb;
+        background-color: #4f5d67;
+        width: 135px;
+        height: 130px;
+        text-align: center;
+        cursor: pointer;
+    }
+
+    .reversed {
+        margin: 20px;
+        font-size: 40px;
+        color: black;
+        background-color: white;
+        width: 125px;
+        height: 125px;
+        text-align: center;
+        cursor: pointer;
+
+        transform: perspective( 600px ) rotateY( 180deg );
+        -webkit-transform: perspective( 600px ) rotateY( 180deg );
+        width: 125px; height: 125px;
+        backface-visibility: hidden;
+        -webkit-backface-visibility: hidden;
+        transition: transform .5s linear 0s;
+      }
+
+    paper-material {
+      background: #4f5d67;
+      border-radius: 10px;
+      margin: 10px;
+    }
+
+  </style>
+
+    <paper-material elevation="5" class="layout horizontal center center-justified" class$="{{day.class}}">
+          December {{day.number}}
+    </paper-material>
+
+</template>
+  <script>
+    /**
+     * @customElement
+     * @polymer
+     */
+    class CalendarDay extends Polymer.Element {
+        static get is() {
+          return 'calendar-day';
+        }
+        static get properties() {
+            return {
+
+        };
+      }
+    }
+    window.customElements.define(CalendarDay.is, CalendarDay);
+  </script>
+</dom-module>

@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, minimum-scale=1, initial-scale=1, user-scalable=yes">
+
+    <title>Advent_calendar</title>
+    <meta name="description" content="demo for data binding ">
+
+    <!-- See https://goo.gl/OOhYW5 -->
+    <link rel="manifest" href="/manifest.json">
+
+    <script src="/bower_components/webcomponentsjs/webcomponents-loader.js"></script>
+
+    <link rel="import" href="/src/progress-app/progress-app.html">
+  </head>
+
+  <style>
+
+    @font-face {
+      font-family: Alex Brush;
+      src: url(/src/resources/AlexBrush-Regular.ttf);
+    }
+
+    /* works of course only with internet connection...*/
+
+    body { background-color:#333; }
+          #snow{
+            background: silver;
+            font-family: Alex Brush;
+            background-image: url('http://www.wearewebstars.dk/codepen/img/s1.png'), url('http://www.wearewebstars.dk/codepen/img//s2.png'), url('http://www.wearewebstars.dk/codepen/img//s3.png');
+            height: 100%;
+            left: 0;
+            position: absolute;
+            top: 0;
+            width: 100%;
+            z-index:1;
+            -webkit-animation: snow 10s linear infinite;
+            -moz-animation: snow 10s linear infinite;
+            -ms-animation: snow 10s linear infinite;
+            animation: snow 10s linear infinite;
+          }
+          @keyframes snow {
+            0% {background-position: 0px 0px, 0px 0px, 0px 0px;}
+            50% {background-position: 500px 500px, 100px 200px, -100px 150px;}
+            100% {background-position: 500px 1000px, 200px 400px, -100px 300px;}
+          }
+          @-moz-keyframes snow {
+            0% {background-position: 0px 0px, 0px 0px, 0px 0px;}
+            50% {background-position: 500px 500px, 100px 200px, -100px 150px;}
+            100% {background-position: 400px 1000px, 200px 400px, 100px 300px;}
+          }
+          @-webkit-keyframes snow {
+            0% {background-position: 0px 0px, 0px 0px, 0px 0px;}
+            50% {background-position: 500px 500px, 100px 200px, -100px 150px;}
+            100% {background-position: 500px 1000px, 200px 400px, -100px 300px;}
+          }
+          @-ms-keyframes snow {
+            0% {background-position: 0px 0px, 0px 0px, 0px 0px;}
+            50% {background-position: 500px 500px, 100px 200px, -100px 150px;}
+            100% {background-position: 500px 1000px, 200px 400px, -100px 300px;}
+          }
+</style>
+
+<body>
+    <progress-app id="snow"></progress-app>
+  </body>
+</html>

@@ -1,0 +1,32 @@
+<link rel="import" href="../../bower_components/polymer/polymer-element.html">
+<link rel="import" href="../../bower_components/iron-flex-layout/iron-flex-layout-classes.html">
+<link rel="import" href="../../bower_components/paper-material/paper-material.html">
+<link rel="import" href="../calendar-bulb/calendar-bulb.html">
+
+<dom-module id="calendar-bulbs">
+  <template>
+  <style include="iron-flex iron-flex-alignment iron-positioning">
+
+  </style>
+
+    <div class="bulbs layout horizontal center center-justified wrap">
+      <template is="dom-repeat" items="{{bulbs}}">
+          <calendar-bulb bulbs={{bulbs}} bulb={{item}}></calendar-bulb>
+      </template>
+    </div>
+
+  </template>
+
+  <script>
+    /**
+     * @customElement
+     * @polymer
+     */
+    class CalendarBulbs extends Polymer.Element {
+      static get is() { return 'calendar-bulbs';
+      }
+
+    }
+    window.customElements.define(CalendarBulbs.is, CalendarBulbs);
+  </script>
+</dom-module>

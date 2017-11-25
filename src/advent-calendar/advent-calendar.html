@@ -1,0 +1,101 @@
+<link rel="import" href="../../bower_components/polymer/polymer-element.html">
+<link rel="import" href="../../bower_components/app-layout/app-toolbar/app-toolbar.html">
+<link rel="import" href="../../bower_components/iron-flex-layout/iron-flex-layout-classes.html">
+<link rel="import" href="../calendar-days/calendar-days.html">
+<link rel="import" href="../calendar-bulbs/calendar-bulbs.html">
+<link rel="import" href="../calendar-bulb/calendar-bulb.html">
+
+<dom-module id="advent-calendar">
+  <template>
+  <style include="iron-flex iron-flex-alignment iron-positioning">
+
+    app-toolbar {
+      min-height: 100px;
+      padding-top: 10px;
+      color: silver;
+      font-family: Alex Brush;
+      --app-toolbar-font-size: 40px;
+    }
+
+    .title {
+      color: white;
+      padding-top: 20px;
+      font-size: 60px;
+    }
+
+    .happyHolidays {
+      color: red;
+      padding-top: 20px;
+      font-size: 120px;
+    }
+
+    footer {
+      font-family: 'Roboto', Helvetica, sans-serif;
+      position: fixed;
+      bottom: 0;
+      width: 100%;
+   }
+
+  </style>
+  <app-toolbar class="layout vertical">
+      <div id="titleClass" main-title class="title layout horizontal center-justified">[[title]]</div>
+  </app-toolbar>
+
+  <calendar-days days={{days}}></calendar-days>
+
+  <footer>
+    <calendar-bulbs bulbs={{days}}></calendar-bulbs>
+  </footer>
+
+  </template>
+
+  <script>
+    /**
+     * @customElement
+     * @polymer
+     */
+    class AdventCalendar extends Polymer.Element {
+      static get is() {
+        return 'advent-calendar';
+      }
+      static get properties() {
+        return {
+          days: {
+            type: Array,
+            notify: true
+          },
+          bulbs: {
+            type: Array,
+            notify: true
+          },
+          title: {
+            type: String,
+            value: 'ADVENT CALENDAR 2017',
+            observer: this.days
+          },
+        };
+      }
+
+      static get observers() {
+        return [
+          'computeTitle(days.*)' //observing the change of days array - when all days are gone (property opened is set to true) the title changes accordingly
+        ]
+      }
+
+      computeTitle(t) {
+
+        var checkOpened = function(day) {
+          return day.opened
+        }
+
+        if (this.days.every(checkOpened)) {
+          return this.title = "Happy Holidays!"
+        } else {
+          this.title = 'Advent Calendar 2017'
+        }
+
+      }
+    }
+    window.customElements.define(AdventCalendar.is, AdventCalendar);
+  </script>
+</dom-module>

@@ -1,0 +1,54 @@
+<link rel="import" href="../../bower_components/polymer/polymer-element.html">
+<link rel="import" href="../../bower_components/iron-flex-layout/iron-flex-layout-classes.html">
+<link rel="import" href="../../bower_components/iron-icon/iron-icon.html">
+<link rel="import" href="../calendar-icons/calendar-icons.html">
+
+<dom-module id="calendar-bulb">
+  <template>
+  <style include="iron-flex iron-flex-alignment iron-positioning">
+
+    .bulb {
+        width: 40px;
+        height: 40px;
+        color: black;
+        }
+
+      .litbulb {
+        width: 60px;
+        height: 60px;
+        color: #fff3b2;
+    }
+
+  </style>
+
+    <div class="layout horizontal center center-justified">
+        <iron-icon icon="calendar:bulb" class$="[[computeClass(bulb.opened)]]"></iron-icon>
+    </div>
+
+</template>
+  <script>
+    /**
+     * @customElement
+     * @polymer
+     */
+    class CalendarBulb extends Polymer.Element {
+        static get is() {
+          return 'calendar-bulb';
+        }
+        static get properties() {
+            return {
+        };
+      }
+
+      computeClass(c) {
+        if (c) {
+          return 'litbulb'
+        } else {
+          return 'bulb'
+        }
+      }
+
+    }
+    window.customElements.define(CalendarBulb.is, CalendarBulb);
+  </script>
+</dom-module>

@@ -1,0 +1,7 @@
+{
+  "name": "progress_bar_demo",
+  "short_name": "progress_bar_demo",
+  "description": "demo for data binding ",
+  "start_url": "/",
+  "display": "standalone"
+}
