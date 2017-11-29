@@ -1,6 +1,6 @@
-# \<progress_bar_demo\>
+# \<advent_calendar_demo\>
 
-demo for data binding 
+demo for data binding in Polymer application
 
 ## Install the Polymer-CLI
 
