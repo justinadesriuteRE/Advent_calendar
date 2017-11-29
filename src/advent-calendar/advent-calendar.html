@@ -45,7 +45,7 @@
   </style>
   <app-toolbar class="layout vertical">
       <div id="titleClass" main-title class="title layout horizontal center-justified">[[title]]</div>
-      <div hidden$="{{greeting}}" style="margin-top: 100px; color: #333;">
+      <div hidden$="[[greeting]]" style="margin-top: 100px; color: #333;">
         <iron-image src="/src/resources/re-logo-dark.svg"></iron-image>
       </div>
   </app-toolbar>
@@ -88,7 +88,7 @@
         }
 
         if (this.days.every(checkOpened)) {
-          return (this.title = "Happy Holidays from") && (this.greeting = false)
+          return (this.title = "Happy Upcoming Holidays!") && (this.greeting = false)
         } else {
           this.title = 'Advent Calendar 2017'
         }
