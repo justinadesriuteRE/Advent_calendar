@@ -1,5 +1,6 @@
 <link rel="import" href="../../bower_components/polymer/polymer-element.html">
 <link rel="import" href="../../bower_components/app-layout/app-toolbar/app-toolbar.html">
+<link rel="import" href="../../bower_components/iron-image/iron-image.html">
 <link rel="import" href="../../bower_components/iron-flex-layout/iron-flex-layout-classes.html">
 <link rel="import" href="../calendar-days/calendar-days.html">
 <link rel="import" href="../calendar-bulbs/calendar-bulbs.html">
@@ -29,6 +30,11 @@
       font-size: 120px;
     }
 
+    iron-image {
+      width: 400px;
+      height: 400px;
+    }
+
     footer {
       font-family: 'Roboto', Helvetica, sans-serif;
       position: fixed;
@@ -39,6 +45,9 @@
   </style>
   <app-toolbar class="layout vertical">
       <div id="titleClass" main-title class="title layout horizontal center-justified">[[title]]</div>
+      <div hidden$="{{greeting}}" style="margin-top: 100px; color: #333;">
+        <iron-image src="/src/resources/re-logo-dark.svg"></iron-image>
+      </div>
   </app-toolbar>
 
   <calendar-days days={{days}}></calendar-days>
@@ -60,6 +69,10 @@
             type: String,
             value: 'ADVENT CALENDAR 2017'
           },
+          greeting: {
+            type: Boolean,
+            value: true
+          }
         };
       }
 
@@ -75,7 +88,7 @@
         }
 
         if (this.days.every(checkOpened)) {
-          return this.title = "Happy Holidays!"
+          return (this.title = "Happy Holidays from") && (this.greeting = false)
         } else {
           this.title = 'Advent Calendar 2017'
         }
