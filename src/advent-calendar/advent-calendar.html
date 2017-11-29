@@ -50,28 +50,15 @@
   </template>
 
   <script>
-    /**
-     * @customElement
-     * @polymer
-     */
     class AdventCalendar extends Polymer.Element {
       static get is() {
         return 'advent-calendar';
       }
       static get properties() {
         return {
-          days: {
-            type: Array,
-            notify: true
-          },
-          bulbs: {
-            type: Array,
-            notify: true
-          },
           title: {
             type: String,
-            value: 'ADVENT CALENDAR 2017',
-            observer: this.days
+            value: 'ADVENT CALENDAR 2017'
           },
         };
       }
@@ -83,7 +70,6 @@
       }
 
       computeTitle(t) {
-
         var checkOpened = function(day) {
           return day.opened
         }

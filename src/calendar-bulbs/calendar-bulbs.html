@@ -9,7 +9,7 @@
 
   </style>
 
-    <div class="bulbs layout horizontal center center-justified wrap">
+    <div class="bulbs layout horizontal center justified wrap">
       <template is="dom-repeat" items="{{bulbs}}">
           <calendar-bulb bulbs={{bulbs}} bulb={{item}}></calendar-bulb>
       </template>
@@ -23,7 +23,8 @@
      * @polymer
      */
     class CalendarBulbs extends Polymer.Element {
-      static get is() { return 'calendar-bulbs';
+      static get is() {
+        return 'calendar-bulbs';
       }
 
     }

@@ -22,7 +22,6 @@
 
   </style>
 
-
     <div class="days layout horizontal center center-justified wrap">
       <template is="dom-repeat" items="{{days}}">
           <calendar-day days={{days}} day={{item}} on-click=lightBulb></calendar-day>
@@ -32,10 +31,7 @@
   </template>
 
   <script>
-    /**
-     * @customElement
-     * @polymer
-     */
+
     class CalendarDays extends Polymer.Element {
       static get is() { return 'calendar-days'; }
       static get properties() {
@@ -76,7 +72,6 @@
       lightBulb(e) {
         e.model.set('item.opened', !e.model.item.opened);
         e.model.set('item.class', 'reversed')
-        console.log('days info', e.target, e.target.day, e.target.day.number);
       }
 
     }

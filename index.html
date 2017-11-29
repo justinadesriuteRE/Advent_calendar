@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, minimum-scale=1, initial-scale=1, user-scalable=yes">
 
-    <title>Advent_calendar</title>
+    <title>Advent_calendar_2017</title>
     <meta name="description" content="demo for data binding ">
 
     <!-- See https://goo.gl/OOhYW5 -->
@@ -12,7 +12,7 @@
 
     <script src="/bower_components/webcomponentsjs/webcomponents-loader.js"></script>
 
-    <link rel="import" href="/src/progress-app/progress-app.html">
+    <link rel="import" href="/src/advent-calendar/advent-calendar.html">
   </head>
 
   <style>
@@ -23,7 +23,6 @@
     }
 
     /* works of course only with internet connection...*/
-
     body { background-color:#333; }
           #snow{
             background: silver;
@@ -60,9 +59,9 @@
             50% {background-position: 500px 500px, 100px 200px, -100px 150px;}
             100% {background-position: 500px 1000px, 200px 400px, -100px 300px;}
           }
-</style>
+  </style>
 
-<body>
-    <progress-app id="snow"></progress-app>
+  <body>
+    <advent-calendar id="snow"></advent-calendar>
   </body>
 </html>

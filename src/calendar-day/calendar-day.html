@@ -45,15 +45,11 @@
   </style>
 
     <paper-material elevation="5" class="layout horizontal center center-justified" class$="{{day.class}}">
-          December {{day.number}}
+        December {{day.number}}
     </paper-material>
 
 </template>
   <script>
-    /**
-     * @customElement
-     * @polymer
-     */
     class CalendarDay extends Polymer.Element {
         static get is() {
           return 'calendar-day';
